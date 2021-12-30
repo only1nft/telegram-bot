@@ -134,7 +134,6 @@ func verify(update tgbotapi.Update) {
 				return
 			}
 			success, _ = only1sdk.FindOwnershipTransfer(ctx, conn, publicKey, amount)
-			fmt.Println("hello", success)
 			if success {
 				return
 			}
