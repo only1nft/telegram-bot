@@ -21,12 +21,12 @@ func processUpdate(update tgbotapi.Update) {
 		return
 	}
 
-	if !update.Message.Chat.IsPrivate() {
+	// Wait until public key input
+	if update.Message == nil {
 		return
 	}
 
-	// Wait until public key input
-	if update.Message == nil {
+	if !update.Message.Chat.IsPrivate() {
 		return
 	}
 
