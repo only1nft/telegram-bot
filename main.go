@@ -1,7 +1,6 @@
 package main
 
 import (
-	"context"
 	"encoding/json"
 	"flag"
 	"log"
@@ -11,7 +10,6 @@ import (
 
 	badger "github.com/dgraph-io/badger/v3"
 	"github.com/gagliardetto/solana-go/rpc"
-	"github.com/gagliardetto/solana-go/rpc/ws"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
 
@@ -28,7 +26,6 @@ var (
 	bot         *tgbotapi.BotAPI
 	repo        Repository
 	conn        *rpc.Client
-	wsConn      *ws.Client
 	collections map[string]*Collection
 )
 
@@ -75,12 +72,7 @@ func main() {
 		col.ID = id
 	}
 
-	// Initialize Solana rpc connections
-	wsConn, err = ws.Connect(context.Background(), "wss://only1.genesysgo.net/")
-	if err != nil {
-		log.Panic(err)
-	}
-	defer wsConn.Close()
+	// Initialize Solana rpc connection
 	conn = rpc.New("https://only1.genesysgo.net/")
 
 	// Start bot
