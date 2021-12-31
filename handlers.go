@@ -107,7 +107,7 @@ func verify(update tgbotapi.Update) {
 	for id, mints := range mintsDict {
 		if len(mints) > 0 {
 			hasNfts = true
-			msgHeader += fmt.Sprintf("%s NFT in your wallet: *%d\n*", collections[id].Name, len(mints))
+			msgHeader += fmt.Sprintf("%s NFT in your wallet: *%d*\n", collections[id].Name, len(mints))
 		}
 	}
 

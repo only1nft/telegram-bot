@@ -340,8 +340,6 @@ github.com/mwitkow/go-conntrack v0.0.0-20161129095857-cc309e4a2223/go.mod h1:qRW
 github.com/nkovacs/streamquote v0.0.0-20170412213628-49af9bddb229/go.mod h1:0aYXnNPJ8l7uZxf45rWW1a/uME32OF0rhiYGNQ2oF2E=
 github.com/nxadm/tail v1.4.4/go.mod h1:kenIhsEOeOJmVchQTgglprH7qJGnHDVpk1VPCcaMI8A=
 github.com/oklog/ulid v1.3.1/go.mod h1:CirwcVhetQ6Lv90oh/F+FBtV6XMibvdAFo93nm5qn4U=
-github.com/only1nft/solana-sdk-go v0.0.0-20211224190912-d2ae4a417cce h1:JJGXNPvJArIeLoYd3MQMdmM0TRHeLsQg+lKmYqYdoPE=
-github.com/only1nft/solana-sdk-go v0.0.0-20211224190912-d2ae4a417cce/go.mod h1:McAGkFkN9xHDTKdieHlaBHTwyjuNWHWn9xYAeUpjoiU=
 github.com/only1nft/solana-sdk-go v0.0.0-20211227161058-84cbe0b1c607 h1:f4EFMBDin249ksspN0bNX17k6J8BHKy9igb5skyTu2c=
 github.com/only1nft/solana-sdk-go v0.0.0-20211227161058-84cbe0b1c607/go.mod h1:McAGkFkN9xHDTKdieHlaBHTwyjuNWHWn9xYAeUpjoiU=
 github.com/onsi/ginkgo v1.6.0/go.mod h1:lLunBs/Ym6LB5Z9jYTR76FiuTmxDTDusOGeTQH+WWjE=

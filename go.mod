@@ -1,4 +1,4 @@
-module github.com/only1nft/tg-bot
+module github.com/only1nft/telegram-bot
 
 go 1.17
 
