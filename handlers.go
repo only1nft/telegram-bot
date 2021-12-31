@@ -211,7 +211,10 @@ func verify(update tgbotapi.Update) {
 	}
 
 	// Create invite links
-	for id := range mintsDict {
+	for id, mints := range mintsDict {
+		if len(mints) == 0 {
+			continue
+		}
 		col := collections[id]
 
 		if _, err := bot.Request(tgbotapi.UnbanChatMemberConfig{
