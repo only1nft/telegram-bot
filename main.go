@@ -99,6 +99,6 @@ func main() {
 	updates := bot.GetUpdatesChan(u)
 
 	for update := range updates {
-		processUpdate(update)
+		go processUpdate(update)
 	}
 }
