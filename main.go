@@ -11,6 +11,7 @@ import (
 	badger "github.com/dgraph-io/badger/v3"
 	"github.com/gagliardetto/solana-go/rpc"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
+	"github.com/only1nft/solkit-go/genesysgo"
 )
 
 const errMsg = "Something went wrong. Please try again later."
@@ -20,8 +21,9 @@ const (
 )
 
 var (
-	debug bool
-	token string
+	debug   bool
+	token   string
+	ggToken string
 
 	bot         *tgbotapi.BotAPI
 	repo        Repository
@@ -46,6 +48,7 @@ func init() {
 
 	flag.BoolVar(&debug, "debug", false, "debug")
 	flag.StringVar(&token, "token", "", "Telegram token")
+	flag.StringVar(&ggToken, "ggToken", "", "GenesysGo token")
 	flag.Parse()
 }
 
@@ -73,7 +76,10 @@ func main() {
 	}
 
 	// Initialize Solana rpc connection
-	conn = rpc.New("https://only1.genesysgo.net/")
+	if ggToken == "" {
+		log.Fatal("please provide GenesysGo token")
+	}
+	conn = genesysgo.NewRPCClient("https://only1.genesysgo.net/", ggToken)
 
 	// Start bot
 	bot, err = tgbotapi.NewBotAPI(token)
